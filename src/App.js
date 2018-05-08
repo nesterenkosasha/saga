@@ -6,10 +6,17 @@ import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import Icon from 'material-ui/Icon'
 
-import logo from './logo.svg';
+import logo from './assets/logo.svg';
 import './App.css';
 
 class App extends Component {
+  fetchUsers = () => {
+    fetch('/api/users')
+      .then(res => res.text())
+      .then(alert)
+      .catch(alert)
+  }
+
   render() {
     return (
       <div className="App">
@@ -27,10 +34,16 @@ class App extends Component {
 
         <div className="App-intro">
           <img src={logo} className="App-logo" alt="logo" />
-          <p> To get started, edit <code>src/App.js</code> and save to reload. </p> 
+          <p> To get started, edit <code>src/App.js</code> and save to reload. </p>
         </div>
-        
-        <Button variant="raised" color="secondary"> Get started </Button>
+
+        <Button
+          variant="raised" 
+          color="secondary"
+          onClick={this.fetchUsers} 
+        > 
+          Check server
+        </Button>
       </div>
     );
   }
