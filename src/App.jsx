@@ -4,7 +4,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
-import Icon from 'material-ui/Icon'
+import Icon from 'material-ui/Icon';
 
 import logo from './assets/logo.svg';
 import './App.css';
@@ -14,7 +14,7 @@ class App extends Component {
     fetch('/api/users')
       .then(res => res.text())
       .then(alert)
-      .catch(alert)
+      .catch(alert);
   }
 
   render() {
@@ -38,10 +38,10 @@ class App extends Component {
         </div>
 
         <Button
-          variant="raised" 
+          variant="raised"
           color="secondary"
-          onClick={this.fetchUsers} 
-        > 
+          onClick={this.fetchUsers}
+        >
           Check server
         </Button>
       </div>
