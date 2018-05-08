@@ -25,12 +25,12 @@ class App extends Component {
           </Toolbar>
         </AppBar>
 
-        <p className="App-intro">
+        <div className="App-intro">
           <img src={logo} className="App-logo" alt="logo" />
-          To get started, edit <code>src/App.js</code> and save to reload.
-
-          <Button variant="raised" color="secondary"> Get started </Button>
-        </p>
+          <p> To get started, edit <code>src/App.js</code> and save to reload. </p> 
+        </div>
+        
+        <Button variant="raised" color="secondary"> Get started </Button>
       </div>
     );
   }
