@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   padding-top: 64px;
+  display: flex;
+  flex-direction: row;
 }
 
 .App-header-title {
@@ -35,4 +37,21 @@
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+.main{
+  min-width: 65%;
+  border: 1px solid grey;
+  padding: 20px;
+  border-radius: 5px;
+}
+.navBar{
+  min-width: 30%;
+  border: 1px solid grey;
+  padding: 20px;
+  border-radius: 5px;
+}
+.tableRow{
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
