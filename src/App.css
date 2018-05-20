@@ -7,12 +7,40 @@
   flex: 1;
   text-align: left;
 }
-
+.main{
+  /* display: flex; */
+  height: 100%;
+  padding: 20px;
+}
+.navBar{
+  width: 35%;
+  border: 1px solid grey;
+}
+.nav-list{
+  list-style-type: none;
+}
+.nav-item{
+  margin: 20px auto;
+}
+.a{
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.tableRow{
+  width: 100%;
+  text-align: center;
+  border: 1px solid grey;
+}
+.tableRow{
+  border-bottom: 1px solid grey;
+}
 .App-intro {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 60%;
 }
 
 .App-logo {
