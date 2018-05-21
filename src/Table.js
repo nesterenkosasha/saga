@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Link } from "react-router-dom";
+// import { withRouter } from 'react-router'
+
 
 
 export default class Table extends Component {
+  handelClick = (e, id) => {
+    e.preventDefault()
+    console.log("LINK", id)
+    //this.props.history.push(`/users/${id}`)
+
+  }
 
     render(){
         console.log(this.props)
@@ -20,16 +29,16 @@ export default class Table extends Component {
                     this.props.users.map(el => (
                       <tr className="tableRow" key={el.id}>
                       <td>{el.id}</td>
-                      <td><a href="#">{el.firstName}</a></td>
+                      <td><Link to={`/users/${el.id}`}>{el.firstName}</Link></td>
                       <td>{el.lastName}</td>
                       <td>{el.age}</td>
                       </tr>
                     ))
                   }
                 </tbody>
-
             </table>
         </div>
       )
       }
     }
+    // export default withRouter(Table)

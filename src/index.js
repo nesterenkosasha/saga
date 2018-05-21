@@ -9,10 +9,12 @@ import { Route, Router, browserHistory } from 'react-router'
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 import Admins from './Admins';
 import App from './App';
+import UserId from './UserId';
+
 import AddNewUser from './AddNewUser.js';
 import Menu from './Menu';
 import './App.css';
-import { reducerUsers, reducerPanding } from './reducers'
+import { reducerUsers, reducerPanding, reducerPopUp, reducerOpen, reducerchangeToInput } from './reducers'
 import rootSaga from './sagas'
 import Users from './Users.js';
 import theme from './styles/material-ui-theme';
@@ -35,6 +37,9 @@ const enhancers = compose(
 const reducer = combineReducers({
   reducerUsers,
   reducerPanding,
+  reducerPopUp,
+  reducerOpen,
+  reducerchangeToInput,
   router: routerReducer
 });
 
@@ -49,6 +54,7 @@ ReactDOM.render(
     <div className="a">
       <Route path="/" component={Menu} />
       <Route path="/users" component={Users} />
+      <Route path="/users/:id" component={UserId} />
       <Route path="/app" component={App} />
       <Route path="/admins" component={Admins} />
       <Route path="/addNewUser" component={AddNewUser} />

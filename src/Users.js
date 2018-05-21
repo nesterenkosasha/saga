@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { getUsers, addNewUser } from './actions';
 import Table from './Table.js'
 import Loading from './Loading.js'
-import { Link } from "react-router-dom";
-
+//import { Link } from "react-router-dom";
+import AddNewUser from './AddNewUser.js'
 
 
 class Users extends Component {
@@ -13,13 +13,26 @@ class Users extends Component {
         this.props.fetch_start()
       }
 
+      handelOpenClick = (e) => {
+        e.preventDefault()
+        this.props.popUpOpen(true)
+      //  console.log("reducerPopUp", this.props.reducerPopUp)
+      }
+
     render(){
-        console.log("USERS", this.props)
+    //    console.log("USERS", this.props)
         return(
             <div className="main" >
-            <button 
-            // onClick={this.props.addNewUser}
-            ><Link to="/addNewUser">ADD NEW USER</Link></button>
+            <button className="btn"
+            onClick={this.handelOpenClick}
+            >
+            ADD NEW USER
+            </button>
+            {
+                this.props.reducerPopUp
+                    ? <AddNewUser />
+                    : null
+            }
             <h1>Title: USERS</h1>
             {
                 this.props.isLoading
@@ -31,17 +44,21 @@ class Users extends Component {
     }
 }
 const mapStateToProps = state => {
-    console.log(state.reducerUsers)
+    // console.log(state.reducerUsers)
     return {
         users: state.reducerUsers,
-        isLoading: state.reducerPanding
+        isLoading: state.reducerPanding,
+        reducerPopUp: state.reducerPopUp
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-      fetch_start: () => dispatch(getUsers()),
-    //   addNewUser,
+        fetch_start: () => dispatch(getUsers()),
+        popUpOpen: (value) => dispatch({
+            type: "popUpOpen",
+            payload: value
+        })
     }
   };
 
