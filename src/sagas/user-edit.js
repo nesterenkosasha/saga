@@ -1,12 +1,6 @@
-import { fork, takeEvery, call, put, takeLatest } from 'redux-saga/effects'
-import { deleteUser } from '../api/index.js'
-import { toDelete, deleteTodo } from '../actions/index.js'
-
-
-export default function * userSaga() {
-    yield fork(userDeleteWatcher)
-    // yield fork(todoToggleWatcher)
-}
+import { fork, takeEvery, call, put } from 'redux-saga/effects'
+import { deleteUserApi, updateUserApi } from '../api/index.js'
+import { deleteUser, updateUserInReducer } from '../actions/index.js'
 
 function * userDeleteWatcher() {
     yield takeEvery("toDelete", userDeleteWorker)
@@ -14,59 +8,32 @@ function * userDeleteWatcher() {
 
 function * userDeleteWorker({ payload: id }) {
     try{
-        yield call(deleteUser, id)
-        yield put(deleteTodo(id))
+        yield call(deleteUserApi, id)
+        yield put(deleteUser(id))
     } catch(error){
         console.error(error.message)
     }
 }
 
-// function * todoToggleWatcher() {
-//     yield takeEvery(handleToggle, todoToggleWorker)
-// }
+function * updateUserWatcher() {
+    yield takeEvery("updateUser", updateUserWorker)
+}
 
-// function * todoToggleWorker({ payload: id }) {
-//     let todo = yield select(selectTodoById, id) 
-//     todo = toggleStatus(todo)
-//     todo = yield call(updateTodoApi, todo)
-//     yield put(updateTodo(todo))
-// }
-
-// const toggleStatus = (todo) => ({
-//     ...todo,
-//     status: todo.status === 'active' ? 'complete' : 'active'
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export function * updateUsersWatcher() {
-//     yield takeEvery("update", updateUserWorker)
-//   }
+function * updateUserWorker({ payload }) {
+    try{
+        const user = yield call(updateUserApi, payload)
+        yield put({
+            type: "updateUserInReducer",
+            payload: user
+        })
+    } catch(error){
+        console.error(error)
+    }
+}
     
-//   function * updateUserWorker({ payload: id }) {
-//     try{
-//       console.log("todelete", id)
-//         const user = yield call(getUser(id))
-//         console.log("111", user)
-       
-//     } catch(err){
-//       console.log(err)
-//     }
-//   }
-  
+export default function * userSaga() {
+    yield fork(userDeleteWatcher)
+    yield fork(updateUserWatcher)
+}
+    
+    

@@ -2,28 +2,29 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { addNewUser, popUpOpen } from './actions/index.js'
-//import { Link } from "react-router-dom";
-import Table from './Table.js'
 
 
 class AddNewUser extends Component {
+    constructor(props){
+        super(props)
+        this.state={}
+    }
     handelSubmit=(e) => {
         e.preventDefault()
-        if (this.firstName.value && this.lastName.value && this.age.value){
-            this.props.addNewUser({ firstName: this.firstName.value, 
-            lastName: this.lastName.value, age: this.age.value })
+        const {firstName, lastName, age, visits, progress, status} = this.state
+        if (firstName && lastName && age && visits && progress && status){
+            this.props.addNewUser({ firstName, lastName, age, visits, progress, status })
+            this.props.popUpOpen(false)        
         } else{
             alert ("Input is empty")
         }
-        
-            this.firstName.value =""
-            this.lastName.value =""
-            this.age.value =""
-            
     }
     handelCloseClick = (e) => {
         e.preventDefault()
         this.props.popUpOpen(false)
+    }
+    handelChange = (target) => {
+        this.setState({[target.name]: target.value})
     }
 
   render() {
@@ -31,16 +32,20 @@ class AddNewUser extends Component {
         <div className="popUp">
             <button onClick={this.handelCloseClick} className="btnDel">x</button>
             <form action="#" onSubmit={this.handelSubmit} 
+            onChange={({ target }) => this.handelChange(target)}
             className="popUpForm">
-            <input ref={input => this.firstName = input} handelSubmit
-            placeholder="first name"  className="input"
+            <input placeholder="first name"  className="input"
             type="text" name="firstName"/>   
-            <input ref={input => this.lastName = input} 
-            placeholder="last name"  className="input"
-            type="text" name="lastName" />   
-            <input ref={input => this.age = input}
-            placeholder="your age"  className="input"
-            type="text" name="age" />   
+            <input placeholder="last name"  className="input"
+            type="text" name="lastName"/>   
+            <input placeholder="your age"  className="input"
+            type="text" name="age"/>   
+             <input placeholder="visits"  className="input"
+            type="text" name="visits"/>
+             <input placeholder="progress"  className="input"
+            type="text" name="progress"/>
+             <input placeholder="your status"  className="input"
+            type="text" name="status"/>
             <button  className="btnInput">OK</button>
             </form>  
         </div>

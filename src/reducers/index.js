@@ -1,24 +1,35 @@
 export const reducerUsers = (state = [], action) => {
-    console.log("ACTIONS", action)
+    // console.log("ACTIONS", action)
     const { type, payload } = action
     switch(type){
       case "setUsers" : {
         return state = payload
       }
       case "addNewUserToreducer" : {
-        console.log("addNewUserToreducer", payload)
         return [...state, payload]
       }
-      case "deleteTodo": {
+      case "deleteUser": {
         const updated = state.filter(el => el.id !== +payload)
         return updated
+      }
+      case "updateUserInReducer": {
+        return state.map(user => {
+          if(user.id === payload.id){
+            return payload
+          } else {
+            return user
+          }
+        })
+      }
+      case "updatedUsers": {
+        console.log("updatedUsers", payload)
       }
     }
     return state
   }
 
+
   export const reducerPanding = (state = "false", action) => {
-   // console.log("ACTION", action)
     if(action.type == "spinerStart"){
         return state = action.payload
     }

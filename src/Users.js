@@ -1,28 +1,70 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import { getUsers, addNewUser } from './actions';
+import { getUsers, popUpOpen, addNewUser, filter } from './actions';
 import Table from './Table.js'
 import Loading from './Loading.js'
-//import { Link } from "react-router-dom";
 import AddNewUser from './AddNewUser.js'
 
 
 class Users extends Component {
+    constructor(props){
+        super(props)
+            this.state={
+                input: "",
+                select: "firstName"    
+        }
+    }
     componentDidMount(){
-        this.props.fetch_start()
+        this.props.getUsers()
+      }
+
+      componentWillReceiveProps(nextProps){
+        console.log("componentWillReceiveProps", nextProps, this.state);
+        const shoudFetchUsers = (
+            this.props.reducerFilter.input !== nextProps.reducerFilter.input
+            && this.props.reducerFilter.select !== nextProps.reducerFilter.select
+        );
+
+        if(shoudFetchUsers) {
+            this.props.getUsers(nextProps.filter);
+            console.log(11111111111)
+        }
+
       }
 
       handelOpenClick = (e) => {
         e.preventDefault()
         this.props.popUpOpen(true)
-      //  console.log("reducerPopUp", this.props.reducerPopUp)
+      }
+      handelSelect = (e) => {
+          this.setState({select: e.target.value})
+      }
+      handelInput = (e) => {
+        this.setState({input: e.target.value})
+      }
+      handelSelectSubmit = (e) => {
+          e.preventDefault()
+        console.log("SAB",this.state)
+        this.props.filter(this.state)
       }
 
     render(){
-    //    console.log("USERS", this.props)
-        return(
+        if(this.props.reducerAuth){
+            return(               
             <div className="main" >
+            <form onSubmit={this.handelSelectSubmit}>
+                <select onChange={this.handelSelect}>
+                    <option value="firstName">First name</option>
+                    <option value="lastName">Last name</option>
+                    <option value="age">age</option>
+                    <option value="visits">visits</option>
+                    <option value="progress">progress</option>
+                    <option value="status">status</option>
+                </select>
+                <input type="text" onInput={this.handelInput}/>
+                <button>SUBMIT</button>
+            </form>
             <button className="btn"
             onClick={this.handelOpenClick}
             >
@@ -41,25 +83,26 @@ class Users extends Component {
             }
           </div>
         )
+        } else {
+            return null
+        }
+        
     }
 }
 const mapStateToProps = state => {
-    // console.log(state.reducerUsers)
     return {
         users: state.reducerUsers,
         isLoading: state.reducerPanding,
-        reducerPopUp: state.reducerPopUp
+        reducerPopUp: state.reducerPopUp,
+        reducerAuth: state.reducerAuth,
+        reducerFilter: state.reducerFilter
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        fetch_start: () => dispatch(getUsers()),
-        popUpOpen: (value) => dispatch({
-            type: "popUpOpen",
-            payload: value
-        })
-    }
-  };
+const mapDispatchToProps = {
+    getUsers,
+    popUpOpen,
+    filter
+};
 
 export default connect (mapStateToProps, mapDispatchToProps)(Users)

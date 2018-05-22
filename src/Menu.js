@@ -4,7 +4,6 @@ import "./App.css"
 
 export default class Menu extends Component {
     render(){
-       // console.log(this.props)
         return(
             <div className="navBar" >
                     <ul className="nav-list">

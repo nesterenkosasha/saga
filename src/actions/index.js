@@ -2,20 +2,17 @@ import { createAction } from 'redux-actions'
 
 export const getUsers = createAction('getUsers')
 export const setUsers = createAction('setUsers')
-export const addNewUser = ({firstName, lastName, age}) => {
-    return{
-        type: "addNewUser",
-        payload: { firstName, lastName, age }
-    }
-} 
+export const addNewUser = createAction('addNewUser')
 export const addNewUserToreducer = createAction('addNewUserToreducer')
-
 export const getOneUser = createAction('getOneUser')
 export const popUpOpen = createAction('popUpOpen')
-export const toDelete = (id) => {
-    return{
-        type: "toDelete",
-        payload: id
-    }
-} 
-export const deleteTodo = createAction('deleteTodo')
+export const toDelete = createAction('toDelete')
+export const deleteUser = createAction('deleteUser')
+export const updateUser = createAction('updateUser')
+export const updateUserInReducer = createAction('updateUser')
+export const filter = createAction('filter')
+export const filteredUsers = createAction('filteredUsers')
+export const auth = createAction('auth')
+export const authSuccess = createAction('authSuccess') 
+export const authFail = createAction('authFail')
+export const updatedUsers = createAction('updatedUsers')

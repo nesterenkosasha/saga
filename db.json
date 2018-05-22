@@ -1,98 +1,8 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "failure",
-      "lastName": "chin",
-      "age": 4,
-      "visits": 23,
-      "progress": 47,
-      "status": "relationship"
-    },
-    {
-      "id": 4,
-      "firstName": "fight",
-      "lastName": "quince",
-      "age": 15,
-      "visits": 31,
-      "progress": 50,
-      "status": "single"
-    },
-    {
-      "id": 6,
-      "firstName": "juice",
-      "lastName": "home",
-      "age": 14,
-      "visits": 65,
-      "progress": 89,
-      "status": "single"
-    },
-    {
-      "id": 7,
-      "firstName": "teeth",
-      "lastName": "sign",
-      "age": 16,
-      "visits": 88,
-      "progress": 66,
-      "status": "complicated"
-    },
-    {
-      "id": 8,
-      "firstName": "carpenter",
-      "lastName": "reason",
-      "age": 21,
-      "visits": 20,
-      "progress": 81,
-      "status": "relationship"
-    },
-    {
-      "id": 9,
-      "firstName": "root",
-      "lastName": "kittens",
-      "age": 1,
-      "visits": 1,
-      "progress": 89,
-      "status": "complicated"
-    },
-    {
-      "id": 10,
-      "firstName": "owl",
-      "lastName": "glass",
-      "age": 10,
-      "visits": 4,
-      "progress": 81,
-      "status": "complicated"
-    },
-    {
-      "id": 11,
-      "firstName": "rain",
-      "lastName": "picture",
-      "age": 6,
-      "visits": 32,
-      "progress": 57,
-      "status": "single"
-    },
-    {
-      "id": 12,
-      "firstName": "sand",
-      "lastName": "beetle",
-      "age": 9,
-      "visits": 51,
-      "progress": 96,
-      "status": "relationship"
-    },
-    {
-      "id": 13,
-      "firstName": "equipment",
-      "lastName": "relationship",
-      "age": 17,
-      "visits": 82,
-      "progress": 55,
-      "status": "complicated"
-    },
-    {
       "id": 15,
-      "firstName": "use",
+      "firstName": "aassssssssaaaaaaaaaa",
       "lastName": "death",
       "age": 26,
       "visits": 44,
@@ -120,7 +30,7 @@
     {
       "id": 18,
       "firstName": "photo",
-      "lastName": "sink",
+      "lastName": "sinks",
       "age": 12,
       "visits": 81,
       "progress": 91,
@@ -181,15 +91,6 @@
       "status": "complicated"
     },
     {
-      "id": 25,
-      "firstName": "polish",
-      "lastName": "user",
-      "age": 21,
-      "visits": 79,
-      "progress": 84,
-      "status": "complicated"
-    },
-    {
       "id": 26,
       "firstName": "taste",
       "lastName": "carpenter",
@@ -204,7 +105,7 @@
       "lastName": "administration",
       "age": 11,
       "visits": 33,
-      "progress": 26,
+      "progress": "265555555555555",
       "status": "complicated"
     },
     {
@@ -406,85 +307,26 @@
       "status": "relationship"
     },
     {
-      "firstName": "",
-      "lastName": "",
-      "age": "",
-      "visits": 75,
-      "progress": 85,
-      "status": "relationship",
-      "id": 52
+      "firstName": "a",
+      "lastName": "a",
+      "age": "a",
+      "visits": "a",
+      "progress": "a",
+      "status": "a",
+      "id": 50
     },
     {
-      "firstName": "",
-      "lastName": "",
-      "age": "",
-      "visits": 75,
-      "progress": 85,
-      "status": "relationship",
-      "id": 53
-    },
-    {
-      "firstName": "s",
-      "lastName": "",
-      "age": "",
-      "visits": 75,
-      "progress": 85,
-      "status": "relationship",
-      "id": 56
-    },
-    {
-      "firstName": "s",
-      "lastName": "",
-      "age": "",
-      "visits": 75,
-      "progress": 85,
-      "status": "relationship",
-      "id": 57
-    },
-    {
-      "firstName": "s",
-      "lastName": "s",
-      "age": "s",
-      "visits": 75,
-      "progress": 85,
-      "status": "relationship",
-      "id": 58
-    },
-    {
-      "firstName": "s",
-      "lastName": "s",
-      "age": "s",
-      "visits": 75,
-      "progress": 85,
-      "status": "relationship",
-      "id": 59
-    },
-    {
-      "firstName": "s",
-      "lastName": "s",
-      "age": "s",
-      "visits": 75,
-      "progress": 85,
-      "status": "relationship",
-      "id": 60
-    },
-    {
-      "firstName": "s",
-      "lastName": "saaaaaaaaaaaaaaaaaaaa",
-      "age": "s",
-      "visits": 75,
-      "progress": 85,
-      "status": "relationship",
-      "id": 61
-    },
-    {
-      "firstName": "q",
-      "lastName": "q",
-      "age": "q",
-      "visits": 75,
-      "progress": 85,
-      "status": "relationship",
-      "id": 62
+      "firstName": "a",
+      "lastName": "a",
+      "age": "a",
+      "visits": "a",
+      "progress": "a",
+      "status": "a",
+      "id": 51
     }
-  ]
+  ],
+  "auth": {
+    "login": "admin",
+    "password": "Z123456"
+  }
 }

@@ -16,13 +16,22 @@
 }
 .navBar{
   width: 35%;
-  border: 1px solid grey;
+}
+.span{
+  display: flex;
+  flex-direction: row;
 }
 .nav-list{
   list-style-type: none;
 }
 .nav-item{
   margin: 20px auto;
+}
+.logi{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .a{
   /* background-color: aqua; */

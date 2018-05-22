@@ -3,12 +3,7 @@ export default function ApiCreator(baseUrl) {
       method,
       ...options
     }).then(data => data.json())
-  
-    // const fetchCreator = (method) => (url, options) => fetch(`/api/${url}`, {
-    //     method,
-    //     ...options
-    // }).then(data => data.json())
-  
+    
     return {
       get: fetchCreator('GET'),
       post: fetchCreator('POST'),
