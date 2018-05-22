@@ -19,3 +19,4 @@ export const toDelete = (id) => {
     }
 } 
 export const deleteTodo = createAction('deleteTodo')
+export const updateUser = createAction('updateUser')

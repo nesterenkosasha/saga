@@ -13,6 +13,9 @@ export const reducerUsers = (state = [], action) => {
         const updated = state.filter(el => el.id !== +payload)
         return updated
       }
+      case "updateUser": {
+        console.log("reducer", payload)
+      }
     }
     return state
   }
