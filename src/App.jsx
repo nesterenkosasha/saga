@@ -6,7 +6,7 @@ import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import Icon from 'material-ui/Icon';
 import './App.css';
-import Menu from './Menu.js'
+import Menu from './Menu'
 
 class App extends Component {
   

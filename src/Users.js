@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { getUsers, popUpOpen, addNewUser, filter, shouldToFilter } from './actions';
-import Table from './Table.js'
-import Loading from './Loading.js'
-import AddNewUser from './AddNewUser.js'
+import Table from './Table'
+import Loading from './Loading'
+import AddNewUser from './AddNewUser'
 import PropTypes from 'prop-types';
 
 
@@ -26,7 +26,6 @@ class Users extends Component {
             this.props.reducerFilter.input === nextProps.reducerFilter.input
             && this.props.reducerFilter.select === nextProps.reducerFilter.select
         );
-
         if(!shoudFetchUsers) {
             this.props.filter(nextProps.reducerFilter);
         }

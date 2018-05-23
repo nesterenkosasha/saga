@@ -8,8 +8,8 @@ import { ConnectedRouter } from 'react-router-redux'
 import App from './App';
 import UserId from './UserId';
 import store from './store'
-import AddNewUser from './AddNewUser.js';
-import Users from './Users.js';
+import AddNewUser from './AddNewUser';
+import Users from './Users';
 import FirstPage from './FirstPage'
 
 const history = createHistory()

@@ -1,6 +1,6 @@
 import { fork, takeEvery, call, put } from 'redux-saga/effects'
-import { uathServer } from '../api/index.js'
-import { auth, authFail, authSuccess } from '../actions/index.js'
+import { uathServer } from '../api'
+import { auth, authFail, authSuccess } from '../actions'
 
 
 export default function * authSaga() {

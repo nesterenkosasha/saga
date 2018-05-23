@@ -1,6 +1,6 @@
 import { fork, takeEvery, call, put } from 'redux-saga/effects'
-import { getUsers } from '../api/index.js'
-import { filter, setUsers } from '../actions/index.js'
+import { getUsers } from '../api'
+import { filter, setUsers } from '../actions'
 
 
 export default function * filterSaga() {

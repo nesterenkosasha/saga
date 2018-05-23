@@ -1,6 +1,6 @@
 import { fork, takeEvery, call, put } from 'redux-saga/effects'
-import { deleteUserApi, updateUserApi } from '../api/index.js'
-import { deleteUser, updateUserInReducer } from '../actions/index.js'
+import { deleteUserApi, updateUserApi } from '../api'
+import { deleteUser, updateUserInReducer } from '../actions'
 
 function * userDeleteWatcher() {
     yield takeEvery("toDelete", userDeleteWorker)

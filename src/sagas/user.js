@@ -1,6 +1,6 @@
 import { fork, takeEvery, call, put, takeLatest } from 'redux-saga/effects'
 import { getUsers as getUsersAction, setUsers, addNewUser, addNewUserToreducer, getOneUser } from '../actions'
-import { getUsers, addUser, getUser } from '../api/index.js'
+import { getUsers, addUser, getUser } from '../api'
 
 function * getUsersWatcher() {
     yield takeLatest(getUsersAction, getUsersWorker)

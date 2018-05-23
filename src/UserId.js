@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-import { toDelete, updateUser } from './actions/index.js'
+import { toDelete, updateUser } from './actions'
 import './App.css';
 import PropTypes from 'prop-types';
 

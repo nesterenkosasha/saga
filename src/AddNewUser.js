@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import { addNewUser, popUpOpen } from './actions/index.js'
+import { addNewUser, popUpOpen } from './actions'
 import PropTypes from 'prop-types';
 
 
