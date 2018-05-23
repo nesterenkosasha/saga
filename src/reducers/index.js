@@ -1,5 +1,4 @@
 export const reducerUsers = (state = [], action) => {
-    // console.log("ACTIONS", action)
     const { type, payload } = action
     switch(type){
       case "setUsers" : {
@@ -21,15 +20,12 @@ export const reducerUsers = (state = [], action) => {
           }
         })
       }
-      case "updatedUsers": {
-        console.log("updatedUsers", payload)
-      }
     }
     return state
   }
 
 
-  export const reducerPanding = (state = "false", action) => {
+  export const reducerPanding = (state = false, action) => {
     if(action.type == "spinerStart"){
         return state = action.payload
     }

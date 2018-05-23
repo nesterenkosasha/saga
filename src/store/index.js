@@ -1,11 +1,6 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-
 import createSagaMiddleware from 'redux-saga';
-// import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-// import { Route, Router, browserHistory } from 'react-router'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
 import { reducerUsers, reducerPanding, reducerPopUp, reducerOpen, reducerchangeToInput } from '../reducers'
 import reducerAuth from '../reducers/auth'

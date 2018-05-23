@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Admins from "./Admins"
 import Menu from './Menu'
-
+import PropTypes from 'prop-types';
 
 class FirstPage extends Component{
 
@@ -26,3 +26,7 @@ const mapStateToProps = state => {
     }
 
 export default connect (mapStateToProps)(FirstPage)
+
+FirstPage.propTypes = {
+    reducerAuth: PropTypes.bool
+} 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
- import { withRouter } from 'react-router'
-
+import { withRouter } from 'react-router'
+import PropTypes from 'prop-types';
 
 
 class Table extends Component {
@@ -39,5 +39,10 @@ class Table extends Component {
         </div>
       )
       }
-    }
-     export default withRouter(Table)
+}
+
+export default withRouter(Table)
+
+Table.propTypes = {
+  users: PropTypes.array
+}    

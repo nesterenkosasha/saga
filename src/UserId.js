@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { toDelete, updateUser } from './actions/index.js'
 import './App.css';
+import PropTypes from 'prop-types';
 
 
 class UserId extends Component {
@@ -78,8 +79,6 @@ class UserId extends Component {
 const mapStateToProps = (state) => {
     return{
         reducerUsers: state.reducerUsers,
-        reducerOpen: state.reducerOpen,
-        reducerchangeToInput: state.reducerchangeToInput
     }
 }
 
@@ -89,3 +88,9 @@ const mapDispatchToProps = {
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserId))
+
+UserId.propTypes = {    
+    reducerUsers: PropTypes.array,
+    toDelete: PropTypes.func,
+    updateUser: PropTypes.func
+}

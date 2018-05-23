@@ -16,3 +16,5 @@ export const auth = createAction('auth')
 export const authSuccess = createAction('authSuccess') 
 export const authFail = createAction('authFail')
 export const updatedUsers = createAction('updatedUsers')
+
+export const shouldToFilter = createAction('shouldToFilter')

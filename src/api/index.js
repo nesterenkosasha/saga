@@ -14,8 +14,6 @@ export const getUsers = (payload) => {
 export const getUser = (id) => api.get(id)
 export const uathServer = () => api.get("auth")
 
-console.log("API", getUsers)
-//
 export const addUser = (user) => api.post('users', {
   body: JSON.stringify(user),
   headers: {

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { auth } from './actions';
 import './App.css';
 import isValid from './utils'
+import PropTypes from 'prop-types';
 
 
 class Admins extends Component {
@@ -46,12 +47,12 @@ class Admins extends Component {
 )
 }
 }
-const mapStateToProps = state => {
-        return state
-    }
 
 const mapDispatchToProps = {
     auth
 };
+export default connect (null, mapDispatchToProps)(Admins)
 
-export default connect (mapStateToProps, mapDispatchToProps)(Admins)
+Admins.propTypes = {    
+    auth: PropTypes.func
+}

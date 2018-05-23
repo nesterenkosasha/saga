@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import { getUsers, popUpOpen, addNewUser, filter } from './actions';
+import { getUsers, popUpOpen, addNewUser, filter, shouldToFilter } from './actions';
 import Table from './Table.js'
 import Loading from './Loading.js'
 import AddNewUser from './AddNewUser.js'
+import PropTypes from 'prop-types';
 
 
 class Users extends Component {
@@ -15,20 +16,19 @@ class Users extends Component {
                 select: "firstName"    
         }
     }
+
     componentDidMount(){
         this.props.getUsers()
       }
 
-      componentWillReceiveProps(nextProps){
-        console.log("componentWillReceiveProps", nextProps, this.state);
+      componentWillReceiveProps(nextProps){   
         const shoudFetchUsers = (
-            this.props.reducerFilter.input !== nextProps.reducerFilter.input
-            && this.props.reducerFilter.select !== nextProps.reducerFilter.select
+            this.props.reducerFilter.input === nextProps.reducerFilter.input
+            && this.props.reducerFilter.select === nextProps.reducerFilter.select
         );
 
-        if(shoudFetchUsers) {
-            this.props.getUsers(nextProps.filter);
-            console.log(11111111111)
+        if(!shoudFetchUsers) {
+            this.props.filter(nextProps.reducerFilter);
         }
 
       }
@@ -38,16 +38,15 @@ class Users extends Component {
         this.props.popUpOpen(true)
       }
       handelSelect = (e) => {
-          this.setState({select: e.target.value})
+          const state = this.setState({select: e.target.value})
       }
       handelInput = (e) => {
         this.setState({input: e.target.value})
       }
       handelSelectSubmit = (e) => {
           e.preventDefault()
-        console.log("SAB",this.state)
-        this.props.filter(this.state)
-      }
+          this.props.shouldToFilter(this.state)
+       }
 
     render(){
         if(this.props.reducerAuth){
@@ -102,7 +101,20 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     getUsers,
     popUpOpen,
-    filter
+    filter,
+    shouldToFilter
 };
 
 export default connect (mapStateToProps, mapDispatchToProps)(Users)
+
+Users.propTypes = {    
+    users: PropTypes.array,
+    isLoading: PropTypes.bool,
+    reducerPopUp: PropTypes.bool,
+    reducerAuth: PropTypes.bool,
+    reducerFilter: PropTypes.object,
+    getUsers: PropTypes.func,
+    popUpOpen: PropTypes.func,
+    filter: PropTypes.func,
+    shouldToFilter: PropTypes.func
+}

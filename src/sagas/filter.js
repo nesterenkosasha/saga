@@ -15,7 +15,6 @@ function * filterWorker({payload}) {
     try{
         const filteredUser = yield call(getUsers, payload)
         yield put(setUsers(filteredUser))
-        //yield put(setUsers(filteredUser))
     } catch(error){
         console.error(error.message)
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { addNewUser, popUpOpen } from './actions/index.js'
+import PropTypes from 'prop-types';
 
 
 class AddNewUser extends Component {
@@ -54,16 +55,14 @@ class AddNewUser extends Component {
 }
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addNewUser: (payload) => dispatch(addNewUser(payload)),
-        popUpOpen: (value) => dispatch(popUpOpen(value))
-    }
-  };
+const mapDispatchToProps = {
+        addNewUser,
+        popUpOpen
+};
 
-  const mapStateToProps = state => {
-    reducerPopUp: state.reducerPopUp
-  };
+export default connect (null, mapDispatchToProps)(AddNewUser)
 
-
-export default connect (mapStateToProps, mapDispatchToProps)(AddNewUser)
+AddNewUser.propTypes = {    
+    addNewUser: PropTypes.func,
+    popUpOpen: PropTypes.func,
+}
