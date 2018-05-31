@@ -1,24 +1,12 @@
-import { fork, takeEvery, call, put } from 'redux-saga/effects'
-
-import { getUsers as getUsersAction, setUsers } from '../actions'
-import { getUsers } from '../api'
-
-function * todoListSaga() {
-  yield fork(getTodosWatcher)
-}
-
-function * getTodosWatcher() {
-  yield takeEvery(getUsersAction, getTodosWorker)
-}
-
-function * getTodosWorker() {
-//  yield put(spinerStart())spinerStart
-  const users = yield call(getUsers)
-  yield put(setUsers(users))
-}
+import { fork } from 'redux-saga/effects'
+import userSaga from './user-edit'
+import filterSaga from './filter'
+import usersSaga from './user'
+import authSaga from './auth'
 
 export default function * rootSaga() {
-  yield fork(todoListSaga)
+  yield fork(usersSaga)
+  yield fork(userSaga)
+  yield fork(filterSaga)
+  yield fork(authSaga)
 }
-//yield fork(todoAddSaga)
-  //yield fork(todoSaga)

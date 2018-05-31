@@ -1,25 +1,112 @@
 .App {
   text-align: center;
   padding-top: 64px;
-  display: flex;
-  flex-direction: row;
 }
 
 .App-header-title {
   flex: 1;
   text-align: left;
 }
-
+.main{
+  /* display: flex; */
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+.navBar{
+  width: 35%;
+}
+.span{
+  display: flex;
+  flex-direction: row;
+}
+.nav-list{
+  list-style-type: none;
+}
+.nav-item{
+  margin: 20px auto;
+}
+.logi{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.a{
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.tableRow{
+  width: 100%;
+  text-align: center;
+  border: 1px solid grey;
+}
+.tableRow{
+  border-bottom: 1px solid grey;
+  border-collapse: collapse;
+}
 .App-intro {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
+  width: 60%;
+}
+table, th, td {
+  border: 1px solid grey;
+}
+table {
   width: 100%;
+}
+.btn{
+  padding: 10px;
+  border-radius: 5px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+th {
+  height: 50px;
+  padding: 10px;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+}
+.popUpForm{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.popUp{
+  min-width: 500px;
+  position: absolute;
+  background-color: blanchedalmond;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid grey;
+  padding:30px;
+}
+.btnDel{
+  float: right;
+}
+.btnInput{
+  padding: 10px 30px;
+  margin: 20px 10px;
+  border-radius: 5px;
+}
+.input{
+  min-width: 400px;
+  padding: 10px;
+  margin: 20px 10px;
+  border-radius: 5px;
+  font-size: 24px;
+  
 }
 
 @keyframes App-logo-spin {
@@ -37,21 +124,4 @@
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-.main{
-  min-width: 65%;
-  border: 1px solid grey;
-  padding: 20px;
-  border-radius: 5px;
-}
-.navBar{
-  min-width: 30%;
-  border: 1px solid grey;
-  padding: 20px;
-  border-radius: 5px;
-}
-.tableRow{
-  padding: 20px;
-  border: 1px solid grey;
-  border-radius: 5px;
 }
